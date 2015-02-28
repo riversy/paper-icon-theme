@@ -155,6 +155,10 @@ def main(SRC):
         print ('')
         print ('Rendering from SVGs in', SRC)
         print ('')
+        
+        if not os.path.exists(SRC):
+          os.mkdir(SRC)
+        
         for file in os.listdir(SRC):
             if file[-4:] == '.svg':
                 file = os.path.join(SRC, file)
